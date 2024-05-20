@@ -16,4 +16,4 @@ jobs:
        echo basica para entender o workflow
        echo 
    - name: Ambiente
-     run: echo Usando a Branch de DEVELOP
+     run: echo Usando a Branch de MAIN
