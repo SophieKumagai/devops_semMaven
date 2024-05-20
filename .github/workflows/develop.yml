@@ -1,9 +1,9 @@
 name: CI_DEVELOP
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "DEVELOP" ]
   pull_request:
-    branches: [ "develop" ]
+    branches: [ "DEVELOP" ]
 jobs:
  build:
   name: PrimeroJob
