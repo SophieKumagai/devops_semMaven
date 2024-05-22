@@ -21,7 +21,11 @@ jobs:
       with:
         java-version: '19'
         distribution: 'temurin'
-    - name: Build with Ant
-      run: ant -noinput -buildfile build.xml
+    - name: Build with Java
+      run: javac src/Main.java -d out
+    - name: Run Java
+      run: java -cp out Main
+    - name: Mensagem de sucesso
+      run: echo Deu Certo!
     - name: Ambiente
       run: echo Usando a Branch de DEVELOP
