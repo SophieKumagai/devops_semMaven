@@ -1,19 +1,27 @@
-name: CI_DEVELOP
+# This workflow will build a Java project with Ant
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-ant
+
+name: Java CI_DEVELOP
+
 on:
   push:
     branches: [ "DEVELOP" ]
   pull_request:
     branches: [ "DEVELOP" ]
+
 jobs:
- build:
-  name: PrimeroJob
-  runs-on: ubuntu-latest
-  steps:
-   - uses: actions/checkout@v4
-   - name: Executando o STEP1
-     run: |
-       echo Esse processo carrega uma mensagem,
-       echo basica para entender o workflow
-       echo 
-   - name: Ambiente
-     run: echo Usando a Branch de DEVELOP
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 19
+      uses: actions/setup-java@v3
+      with:
+        java-version: '19'
+        distribution: 'temurin'
+    - name: Build with Ant
+      run: ant -noinput -buildfile build.xml
+    - name: Ambiente
+      run: echo Usando a Branch de DEVELOP
