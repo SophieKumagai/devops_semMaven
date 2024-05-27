@@ -26,3 +26,12 @@ jobs:
       run: echo Deu Certo!
     - name: Ambiente
       run: echo Usando a Branch de MAIN
+    - uses: mr-smithers-excellent/docker-build-push@v6.4
+      name: Docker Build & Push Action
+      with:
+        image: devops_semmaven/dockerfile
+        tags: latest
+        registry: registry-url.io
+        dockerfile: dockerfile.ci
+        username: ${{secrets.DOCKER_USERNAME}}
+        password: ${{secrets.DOCKER_USERNAME}}
