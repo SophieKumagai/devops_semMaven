@@ -29,7 +29,7 @@ jobs:
     - uses: mr-smithers-excellent/docker-build-push@v6.4
       name: Docker Build & Push Action
       with:
-        image: devops_semmaven/dockerfile
+        image: sophiekumagai/dockerfile
         tags: latest
         registry: docker.io
         dockerfile: dockerfile
