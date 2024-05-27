@@ -30,7 +30,7 @@ jobs:
       name: Docker Build & Push Action
       with:
         image: sophiekumagai/dockerfile
-        tags: latest
+        tags: v1, latest
         registry: docker.io
         dockerfile: dockerfile
         username: ${{secrets.DOCKER_USERNAME}}
