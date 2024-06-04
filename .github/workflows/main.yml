@@ -31,8 +31,6 @@ jobs:
       with:
         release-branch: main
         dev-branch: DEV
-        qa-branch: QA
-        prefix: v
         log-paths: ./
     - name: Docker Build & Push Action
       uses: mr-smithers-excellent/docker-build-push@v6.4 
