@@ -32,13 +32,14 @@ jobs:
         release-branch: main
         dev-branch: DEV
         log-paths: ./
+    - name: Set version number
+      run: echo "VERSION=${GIT_TAG}" >> $GITHUB_ENV
     - name: Docker Build & Push Action
       uses: mr-smithers-excellent/docker-build-push@v6.4 
       with:
         image: sophiekumagai/dockerfile
-        tags: ${{ GIT_TAG }}
+        tags: ${{ env.VERSION }}
         registry: docker.io
         dockerfile: dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        
