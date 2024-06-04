@@ -26,6 +26,14 @@ jobs:
       run: echo Deu Certo!
     - name: Ambiente
       run: echo Usando a Branch de MAIN
+    - name: Git Version
+      uses: codacy/git-version@2.4.0
+      with:
+        release-branch: main
+        dev-branch: DEV
+        qa-branch: QA
+        prefix: v
+        log-paths: ./
     - name: Docker Build & Push Action
       uses: mr-smithers-excellent/docker-build-push@v6.4 
       with:
@@ -35,3 +43,4 @@ jobs:
         dockerfile: dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        
