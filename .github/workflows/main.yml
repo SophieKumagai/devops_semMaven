@@ -36,7 +36,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v6.4 
       with:
         image: sophiekumagai/dockerfile
-        tags: $VERSION
+        tags: ${{ GIT_TAG }}
         registry: docker.io
         dockerfile: dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
