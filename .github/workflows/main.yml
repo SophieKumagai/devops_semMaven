@@ -31,7 +31,7 @@ jobs:
       uses: codacy/git-version@2.4.0
       with:
         release-branch: main
-        prefix: main
+        prefix: main-
     - name: Docker Build & Push Action
       uses: mr-smithers-excellent/docker-build-push@v6.4 
       with:
