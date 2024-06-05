@@ -1,4 +1,4 @@
-name: Java CI_MAIN
+name: Java MAIN
 
 on:
   push:
